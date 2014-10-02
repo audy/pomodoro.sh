@@ -9,18 +9,19 @@ function notify {
 
 function work {
   notify "get to work!"
-  sleep $work_time
-  rest
+  sleep $work_time && rest
 }
 
 function rest {
   notify "time for a break!"
-  sleep $break_time
-  work
+  sleep $break_time && work
 }
 
 case "$1" in
-  start)
-    work 
+  work)
+    work
+  ;;
+  rest)
+    rest
   ;;
 esac
