@@ -1,19 +1,19 @@
 #!/bin/bash
 
-work_time=60*25
-break_time=60*5
+work_time=1500
+break_time=300
 
 function notify {
   terminal-notifier -title Pomodoro -sound Ping -message "${*:1}"
 }
 
 function work {
-  notify "get to work!"
+  notify "WERKZEIT"
   sleep $work_time && rest
 }
 
 function rest {
-  notify "time for a break!"
+  notify "SCHLAFZEIT"
   sleep $break_time && work
 }
 
